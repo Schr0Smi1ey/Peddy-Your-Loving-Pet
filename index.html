@@ -162,7 +162,10 @@
       <!-- Best deal and sorting -->
       <section class="md:container mx-auto my-5 lg:my-10 flex justify-between">
         <h1 class="font-[900] text-2xl">Best Deal For you</h1>
-        <button class="bg-btnPrimary p-3 text-white rounded-lg">
+        <button
+          onclick="sortByPrice()"
+          class="font-bold bg-btnPrimary p-3 text-white rounded-lg"
+        >
           Sort by Price
         </button>
       </section>
@@ -172,14 +175,45 @@
         <div
           class="grid grid-cols-1 md:grid-cols-3 border-2 border-green-600 gap-3 p-3"
         >
+          <div id="petContainer" class="col-span-2 grid-cols-3 gap-3"></div>
           <div
-            id="petContainer"
-            class="col-span-2 grid grid-cols-3 gap-3"
-          ></div>
-          <div
-            class="p-2 border-2 border-gray-300 grid grid-cols-2 rounded-lg"
+            id="loved-pet"
+            class="p-2 border-2 border-gray-300 grid grid-cols-2 auto-rows-auto rounded-lg gap-2"
           ></div>
         </div>
+        <!-- Adopt Modal -->
+        <button class="btn hidden" onclick="adopt.showModal()">
+          open modal
+        </button>
+        <dialog id="adopt" class="modal">
+          <div class="modal-box">
+            <div id="adoptDetails" class="mb-3"></div>
+            <form method="dialog">
+              <button
+                id="cancelButton"
+                class="btn hidden w-full bg-[#0E7A811A] text-[#0E7A81] font-bold"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </dialog>
+        <!-- Details Modal -->
+        <button class="btn hidden" onclick="details.showModal()">
+          open modal
+        </button>
+        <dialog id="details" class="modal">
+          <div class="modal-box">
+            <div id="detailContainer" class="mb-3"></div>
+            <form method="dialog">
+              <button
+                class="btn w-full bg-[#0E7A811A] text-[#0E7A81] font-bold text-xl"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </dialog>
       </section>
     </main>
     <footer class="bg-black p-14">
