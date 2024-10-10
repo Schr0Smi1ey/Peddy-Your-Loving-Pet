@@ -1,7 +1,5 @@
 // Sorting Tracks variable
-
 let isAscending = true;
-
 const loadPets = async () => {
   const url = "https://openapi.programming-hero.com/api/peddy/pets";
   const res = await fetch(url);
@@ -41,6 +39,11 @@ const displayPets = (pets) => {
   petContainer.classList.add("grid");
   pets.forEach((pet) => {
     const newPet = document.createElement("div");
+    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/breed.png" alt="" class="w-6 h-6"></img>
+    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/birth.png" alt="" class="w-6 h-6"></img>
+    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/gender.png" alt="" class="w-6 h-6"></img>
+    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/price.png" alt="" class="w-6 h-6"></img>
+    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/love.svg" class="m-1 h-4 w-4"></img>
     const content = `
             <div id="pet-${pet.petId}" class="card w-fit shadow-xl">
                 <figure>
@@ -54,14 +57,14 @@ const displayPets = (pets) => {
                 </h2>
                 <div>
                     <div class="flex items-center gap-3">
-                        <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/breed.png" alt="" class="w-6 h-6">
+                        <img src="../images/breed.png" alt="" class="w-6 h-6">
                         <h2 class="font-normal text-xl text-[#131313B3]">Breed: <span class="text-lg"> ${
                           pet.breed ? pet.breed : "Not Available"
                         }</span> 
                         </h2>
                     </div>
                     <div class="flex items-center gap-3">
-                        <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/birth.png" alt="" class="w-6 h-6">
+                        <img src="../images/birth.png" alt="" class="w-6 h-6">
                         <h2 class="font-normal text-xl text-[#131313B3]">Birth: <span class="text-lg"> ${
                           pet.date_of_birth
                             ? pet.date_of_birth
@@ -69,13 +72,13 @@ const displayPets = (pets) => {
                         }</span></h2>
                     </div>
                     <div class="flex items-center gap-3">
-                        <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/gender.png" alt="" class="w-6 h-6">
+                        <img src="../images/gender.png" alt="" class="w-6 h-6">
                         <h2 class="font-normal text-xl text-[#131313B3]" >Gender: <span class="text-lg"> ${
                           pet.gender ? pet.gender : "Not Available"
                         }</span></h2>
                     </div>
                     <div class="flex items-center gap-3">
-                        <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/price.png" alt="" class="w-6 h-6">
+                        <img src="../images/price.png" alt="" class="w-6 h-6">
                         <h2 class="font-normal text-xl text-[#131313B3]">Price: <span 
                           class="text-lg price"> $${
                             pet.price ? pet.price : "Not Available"
@@ -89,7 +92,7 @@ const displayPets = (pets) => {
     }', ${
       pet.petId
     })" class="px-3 py-1 rounded-lg border-[1px] border-gray-300">
-                      <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/love.svg" class="m-1 h-4 w-4">
+                      <img src="../images/love.svg" class="m-1 h-4 w-4">
                     </button>
                     <button id="adopt-${
                       pet.petId
@@ -257,9 +260,10 @@ const displayAdoptDetails = (id) => {
   const adoptDetails = document.getElementById("adoptDetails");
   let counter = 3; // Initialize the counter at 3
 
+  // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/hand-shake.png" alt="" class="w-24 h-24 rounded-lg mx-auto"></img>
   const content = `
       <div class="text-center mb-3">
-        <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/hand-shake.png" alt="" class="w-24 h-24 rounded-lg mx-auto">
+        <img src="../images/hand-shake.png" alt="" class="w-24 h-24 rounded-lg mx-auto">
         <h1 class="font-[900] text-5xl mb-4">Congrats</h1>
         <h2 class="font-medium text-lg text-gray-400 mb-4">Adoption process is starting for your pet</h2>
         <span class="countdown font-mono text-6xl">
@@ -293,22 +297,3 @@ const displayAdoptDetails = (id) => {
 
 loadPets();
 displayPets();
-
-/**
- * {
-  "status": true,
-  "message": "successfully fetched pet data using id 1",
-  "petData": {
-    "petId": 1,
-    "breed": "Golden Retriever",
-    "category": "Dog",
-    "date_of_birth": "2023-01-15",
-    "price": 1200,
-    "image": "https://i.ibb.co.com/p0w744T/pet-1.jpg",
-    "gender": "Male",
-    "pet_details": "This friendly male Golden Retriever is energetic and loyal, making him a perfect companion for families. Born on January 15, 2023, he enjoys playing outdoors and is especially great with children. Fully vaccinated, he's ready to join your family and bring endless joy. Priced at $1200, he offers love, loyalty, and a lively spirit for those seeking a playful yet gentle dog.",
-    "vaccinated_status": "Fully",
-    "pet_name": "Sunny"
-  }
-}
- */
