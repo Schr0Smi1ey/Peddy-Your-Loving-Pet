@@ -15,7 +15,7 @@ function hideLoaderShowContent() {
   }, 2000);
 }
 
-window.addEventListener("load", hideLoaderShowContent(), 2000); // 2000ms = 2 seconds);
+window.addEventListener("load", hideLoaderShowContent(), 2000);
 
 const displayPets = (pets) => {
   const petContainer = document.getElementById("petContainer");
@@ -26,7 +26,7 @@ const displayPets = (pets) => {
     noPet.classList = "bg-[#13131308] p-10 rounded-lg text-center";
     noPet.innerHTML = `
             <div class = "mb-3">
-              <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/no-pet.webp" alt="" class="mx-auto">
+              <img src="../images/no-pet.webp" alt="" class="mx-auto">
             </div>
             <h1 class="text-center font-bold text-3xl mb-3">No Information Available</h1>
             <p class="text-center text-base text-[#131313B3]">It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
@@ -39,19 +39,16 @@ const displayPets = (pets) => {
   petContainer.classList.add("grid");
   pets.forEach((pet) => {
     const newPet = document.createElement("div");
-    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/breed.png" alt="" class="w-6 h-6"></img>
-    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/birth.png" alt="" class="w-6 h-6"></img>
-    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/gender.png" alt="" class="w-6 h-6"></img>
-    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/price.png" alt="" class="w-6 h-6"></img>
-    // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/love.svg" class="m-1 h-4 w-4"></img>
     const content = `
-            <div id="pet-${pet.petId}" class="card w-fit shadow-xl">
+            <div id="pet-${pet.petId}" class="card shadow-md mb-3 md:mb-0 p-1">
                 <figure>
                 <img
                     src="${pet.image}"
-                    alt="${pet.category}" />
+                    alt="${pet.category}"
+                    class="w-fit object-cover rounded-lg"
+                 />    
                 </figure>
-                <div class="card-body">
+                <div class="card-body p-1 lg:p-2 xl:p-3">
                 <h2 class="font-[900] text-xl">
                     ${pet.pet_name ? pet.pet_name : "Not Available"}
                 </h2>
@@ -203,6 +200,11 @@ const loadDetails = async (id) => {
 
 const displayDetails = (petData, id) => {
   const detailContainer = document.getElementById("detailContainer");
+  // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/breed.png" alt="" class="w-6 h-6"></img>
+  // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/birth.png" alt="" class="w-6 h-6"></img>
+  // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/gender.png" alt="" class="w-6 h-6"></img>
+  // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/price.png" alt="" class="w-6 h-6"></img>
+  // <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/vaccinated.png" alt="" class="w-6 h-6"></img>
   const content = `
       <div class ="mb-3">
         <img src=${petData.image} alt="" class="w-full rounded-lg"/>
@@ -211,33 +213,34 @@ const displayDetails = (petData, id) => {
         <h1 class="font-bold text-3xl mb-2">${petData.pet_name}</h1>
         <div class="">
           <div class="flex items-center gap-3">
-              <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/breed.png" alt="" class="w-6 h-6">
+              <img src="../images/breed.png" alt="" class="w-6 h-6">
               <h2 class="font-normal text-xl text-[#131313B3]">Breed: <span class="text-lg"> ${
                 petData.breed ? petData.breed : "Not Available"
               }</span>
               </h2>
           </div>
           <div class="flex items-center gap-3">
-              <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/birth.png" alt="" class="w-6 h-6">
+              <img src="../images/birth.png" alt="" class="w-6 h-6">
               <h2 class="font-normal text-xl text-[#131313B3]">Birth: <span class="text-lg"> ${
                 petData.date_of_birth ? petData.date_of_birth : "Not Available"
               }</span></h2>
           </div>
           <div class="flex items-center gap-3">
-              <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/gender.png" alt="" class="w-6 h-6">
+              <img src="../images/gender.png" alt="" class="w-6 h-6">
               <h2 class="font-normal text-xl text-[#131313B3]" >Gender: <span class="text-lg"> ${
                 petData.gender ? petData.gender : "Not Available"
               }</span></h2>
           </div>
           <div class="flex items-center gap-3">
-              <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/price.png" alt="" class="w-6 h-6">
+              <img src="../images/price.png" alt="" class="w-6 h-6">
               <h2 class="font-normal text-xl text-[#131313B3]">Price: <span
                 class="text-lg price"> $${
                   petData.price ? petData.price : "Not Available"
                 }</span></h2>
           </div>
           <div class="flex items-center gap-3">
-              <img src="/Project/b10a6-pet-adoption-Schr0Smi1ey/images/vaccinated.png" alt="" class="w-6 h-6">
+              <img src="../images/vaccinated.png" alt="" class="w-6 h-6">
+              
               <h2 class="font-normal text-xl text-[#131313B3]">Vaccinated Status: <span
                 class="text-lg price"> ${
                   petData.vaccinated_status
@@ -295,5 +298,14 @@ const displayAdoptDetails = (id) => {
   document.getElementById(`adopt-${id}`).innerText = "Adopted";
 };
 
+function loading() {
+  setTimeout(function () {
+    document.getElementById("loader-body").classList.add("hidden");
+    document.getElementById("header").classList.remove("hidden");
+    document.getElementById("main").classList.remove("hidden");
+    document.getElementById("footer").classList.remove("hidden");
+  }, 1000);
+}
+loading();
 loadPets();
 displayPets();

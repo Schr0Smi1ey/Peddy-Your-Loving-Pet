@@ -20,6 +20,8 @@
       rel="stylesheet"
     />
 
+    <link href="https://fonts.cdnfonts.com/css/miama" rel="stylesheet" />
+
     <!-- DaisyUI + TailWind CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
@@ -38,6 +40,7 @@
             fontFamily: {
               inter: ["Inter", "sans-serif"],
               lato: ["Lato", "sans-serif"],
+              miama: ["Miama", "sans-serif"],
             },
           },
         },
@@ -54,15 +57,20 @@
     />
   </head>
   <body class="font-lato">
-    <header>
+    <div id="loader-body">
+      <span
+        class="min-h-screen loading loading-bars loading-lg mx-auto my-auto text-btnPrimary flex justify-center items-center"
+      ></span>
+    </div>
+    <header id="header" class="hidden">
       <!-- Navbar -->
-      <nav class="md:container mx-auto py-5 font-lato">
+      <nav class="md:container mx-auto p-3 mb-5 lg:mb-10">
         <div class="navbar bg-base-100">
           <div class="navbar-start">
-            <div class="flex gap-3">
+            <button class="flex items-center gap-3">
               <img src="images/logo.webp" alt="" />
               <h1 class="font-[900] text-3xl">Peddy</h1>
-            </div>
+            </button>
           </div>
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1 font-semibold text-lg">
@@ -77,7 +85,7 @@
             <button class="btn hover:bg-btnPrimary btn-circle bg-white">
               <img src="images/profile.png" alt="" class="w-10 h-10 p-1" />
             </button>
-            <div class="dropdown">
+            <div class="dropdown dropdown-left">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,11 +104,23 @@
               </div>
               <ul
                 tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-fit p-2 shadow"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-14 w-fit p-2 shadow"
               >
-                <li><a>Home</a></li>
-                <li><a>Shop</a></li>
-                <li><a>Contact</a></li>
+                <li
+                  class="font-semibold text-lg hover:bg-btnPrimary rounded-lg"
+                >
+                  <a>Home</a>
+                </li>
+                <li
+                  class="font-semibold text-lg hover:bg-btnPrimary rounded-lg"
+                >
+                  <a>Shop</a>
+                </li>
+                <li
+                  class="font-semibold text-lg hover:bg-btnPrimary rounded-lg"
+                >
+                  <a>Contact</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -108,11 +128,9 @@
       </nav>
 
       <!-- Banner -->
-      <section
-        class="border-2 border-green-600 md:container mx-auto my-5 lg:my-10"
-      >
+      <section class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10">
         <div
-          class="mx-auto lg:w-3/4 2xl:w-1/2 flex flex-col justify-center items-center text-center mb-7 border-2 border-red-500"
+          class="mx-auto lg:w-3/4 2xl:w-1/2 flex flex-col justify-center items-center text-center mb-7"
         >
           <p
             class="flex gap-3 items-center font-bold text-[#13131399] text-2xl mb-5"
@@ -120,7 +138,7 @@
             Bringing Families Together
             <img src="images/fire.png" alt="" class="w-5 h-5" />
           </p>
-          <h1 class="font-[900] text-7xl mb-5">
+          <h1 class="font-[900] text-5xl md:text-7xl mb-5">
             Your Path to Adoption<br />Starts Here
           </h1>
           <p class="font-normal text-base mb-5">
@@ -144,13 +162,15 @@
         </div>
       </section>
     </header>
-    <main>
+    <main id="main" class="hidden">
       <!-- Bestfriend Adopt -->
       <section
         id="adoptBestFriend"
-        class="border-2 border-green-600 md:container mx-auto my-5 lg:my-10 text-center"
+        class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10 text-center"
       >
-        <h1 class="font-[900] text-4xl mb-4">Adopt Your Best Friend</h1>
+        <h1 class="font-[900] text-3xl md:text-4xl mb-4">
+          Adopt Your Best Friend
+        </h1>
         <p
           class="font-normal text-base text-[#131313B3] lg:w-2/3 2xl:w-1/2 mx-auto"
         >
@@ -163,15 +183,17 @@
       <!-- Show Categories -->
       <section
         id="categoryContainer"
-        class="md:container mx-auto my-5 lg:my-10 flex justify-between border-2 border-red-600 p-4"
+        class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10 flex justify-between flex-wrap gap-4 items-center"
       ></section>
 
       <!-- Best deal and sorting -->
-      <section class="md:container mx-auto my-5 lg:my-10 flex justify-between">
+      <section
+        class="md:container mx-auto px-5 py-2 md:p-5 my-5 lg:my-10 flex justify-between items-center"
+      >
         <h1 class="font-[900] text-2xl">Best Deal For you</h1>
         <button
           onclick="sortByPrice()"
-          class="font-bold bg-btnPrimary p-3 text-white rounded-lg"
+          class="font-bold bg-btnPrimary px-[6px] py-1 md:p-3 text-white rounded-lg"
         >
           Sort by Price
         </button>
@@ -181,7 +203,7 @@
       <section
         id="allPets"
         onload="hideLoaderShowContent()"
-        class="md:container mx-auto my-5 lg:my-10"
+        class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10"
       >
         <div id="loader">
           <span
@@ -190,13 +212,21 @@
         </div>
         <div
           id="section-content"
-          class="hidden grid-cols-1 md:grid-cols-3 border-2 border-green-600 gap-3 p-3"
+          class="hidden grid-cols-1 md:grid-cols-3 gap-3 p-2"
         >
-          <div id="petContainer" class="col-span-2 grid-cols-3 gap-3"></div>
           <div
-            id="loved-pet"
-            class="p-2 border-2 border-gray-300 grid grid-cols-2 auto-rows-auto rounded-lg gap-2"
+            id="petContainer"
+            class="md:col-span-2 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3 md:p-1"
           ></div>
+          <div class="p-1">
+            <h1 class="font-bold text-gray-400 text-2xl mb-2 md:hidden">
+              Your Loved Pets
+            </h1>
+            <div
+              id="loved-pet"
+              class="p-2 border-2 border-gray-300 grid grid-cols-2 auto-rows-auto rounded-lg gap-2"
+            ></div>
+          </div>
         </div>
         <!-- Adopt Modal -->
         <button class="btn hidden" onclick="adopt.showModal()">
@@ -233,47 +263,89 @@
         </dialog>
       </section>
     </main>
-    <footer class="bg-black p-14">
-      <section class="md:container mx-auto my-5 lg:my-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <div class="border-2 border-yellow-500">
-            <div class="flex gap-3 mb-6">
-              <img src="images/logo.webp" alt="" />
-              <h1 class="font-[900] text-[#FFFFFFE6] text-4xl">Peddy</h1>
-            </div>
+    <footer id="footer" class="bg-black p-5 hidden">
+      <section class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10">
+        <div class="grid grid-cols-1 md:grid-cols-3">
+          <div class="text-center md:text-left mb-5 md:mb-0">
+            <button class="mb-6">
+              <a href="#header" class="flex gap-3 items-center">
+                <img src="images/logo.webp" alt="" />
+                <h1 class="font-[900] text-[#FFFFFFE6] text-4xl">Peddy</h1></a
+              >
+            </button>
             <div class="font-normal text-base space-y-2">
               <p>Location: av. Washington 165, NY CA 54003</p>
               <p>Phone: +31 85 964 47 25</p>
               <p>Email: info@yourdomain.com</p>
               <p>Openings hours: 9.00 AM - 5.00 PM</p>
             </div>
-            <div class="flex items-center gap-4 mt-5">
-              <img src="images/facebook.png" alt="" class="w-10 h-10" />
-              <img src="images/twitter.png" alt="" class="w-10 h-10" />
-              <img src="images/youtube.png" alt="" class="w-10 h-10" />
-              <img src="images/instagram.png" alt="" class="w-10 h-10" />
+            <div
+              class="flex items-center md:items-start justify-center md:justify-start gap-4 mt-5"
+            >
+              <img
+                src="images/facebook.png"
+                alt="facebook"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
+              <img
+                src="images/twitter.png"
+                alt="twitter"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
+              <img
+                src="images/youtube.png"
+                alt="youtube"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
+              <img
+                src="images/instagram.png"
+                alt="instagram"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
             </div>
           </div>
-          <div class="flex justify-center border-2 border-yellow-500">
+          <div class="flex justify-center items-center mb-5">
             <div class="mx-auto">
               <h1 class="font-bold text-lg text-[#FFFFFFE6] mb-6">
                 Useful Links
               </h1>
               <ul class="font-normal text-base text-[#FFFFFF99] space-y-3">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Animals</li>
-                <li>Foundation</li>
-                <li>Contact</li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Home</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>About Us</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Animals</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Foundation</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Contact</a>
+                </li>
               </ul>
             </div>
           </div>
-          <div class="flex justify-center border-2 border-yellow-500">
+          <div class="flex justify-center items-center md:items-start">
             <div>
-              <h1 class="font-bold text-lg text-[#FFFFFFE6] mb-4">
+              <h1
+                class="text-center md:text-left font-bold text-lg text-[#FFFFFFE6] mb-4"
+              >
                 Drop a Message
               </h1>
-              <div class="border-yellow-500 border-2">
+              <div>
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -281,7 +353,7 @@
                 />
                 <br />
                 <button
-                  class="bg-btnPrimary text-white font-bold text-lg w-full rounded-lg px-3 py-2"
+                  class="bg-btnPrimary text-[#FFFFFF99] md:text-white font-bold text-lg w-full rounded-lg px-3 py-2"
                 >
                   Subscribe
                 </button>
@@ -289,6 +361,16 @@
             </div>
           </div>
         </div>
+        <div class="divider"></div>
+        <h1 class="text-center mt-2">
+          All rights reserved by
+          <a
+            href="https://www.linkedin.com/in/sarafat-karim/"
+            target="_blank"
+            class="font-bold font-miama text-2xl btn-effect p-2"
+            >Sarafat Karim</a
+          >
+        </h1>
       </section>
     </footer>
     <!-- Script -->
