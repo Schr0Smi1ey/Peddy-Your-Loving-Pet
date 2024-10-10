@@ -184,13 +184,13 @@ const sortByPrice = () => {
 // Love Button
 const loveEffect = (image, id) => {
   const loveBtn = document.getElementById(`love-btn-${id}`);
-  const lovedPet = document.getElementById("loved-pet");
+  const lovedPetContainer = document.getElementById("loved-pet");
 
   loveBtn.classList.toggle("active");
 
   if (loveBtn.classList.contains("active")) {
-    loveBtn.classList.toggle("bg-red-500");
-    loveBtn.classList.toggle("text-white");
+    loveBtn.classList.add("bg-red-500");
+    loveBtn.classList.add("text-white");
 
     const newLovedPet = document.createElement("div");
     newLovedPet.id = `loved-pet-${id}`;
@@ -200,13 +200,31 @@ const loveEffect = (image, id) => {
       </div>
     `;
     newLovedPet.innerHTML = content;
-    lovedPet.appendChild(newLovedPet);
-  } else {
-    loveBtn.classList.toggle("bg-red-500");
-    loveBtn.classList.toggle("text-white");
+    lovedPetContainer.appendChild(newLovedPet);
 
-    const lovedPet = document.getElementById(`loved-pet-${id}`);
-    lovedPet.remove();
+    const noLikedPetMessage = document.getElementById("noLikedPet");
+    if (noLikedPetMessage) {
+      noLikedPetMessage.remove();
+    }
+  } else {
+    loveBtn.classList.remove("bg-red-500");
+    loveBtn.classList.remove("text-white");
+
+    const lovedPetElement = document.getElementById(`loved-pet-${id}`);
+    if (lovedPetElement) {
+      lovedPetElement.remove();
+    }
+
+    if (lovedPetContainer.children.length === 0) {
+      lovedPetContainer.innerHTML = `
+        <h1
+          id="noLikedPet"
+          class="col-span-2 font-bold text-xl md:text-3xl text-gray-400"
+        >
+          You haven't added any pet to your favorites yet
+        </h1>
+      `;
+    }
   }
 };
 
