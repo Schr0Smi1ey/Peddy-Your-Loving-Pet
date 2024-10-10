@@ -9,6 +9,16 @@ const loadPets = async () => {
   displayPets(data.pets);
 };
 
+function hideLoaderShowContent() {
+  setTimeout(function () {
+    document.getElementById("loader").classList.add("hidden");
+    document.getElementById("section-content").classList.remove("hidden");
+    document.getElementById("section-content").classList.add("grid");
+  }, 2000);
+}
+
+window.addEventListener("load", hideLoaderShowContent(), 2000); // 2000ms = 2 seconds);
+
 const displayPets = (pets) => {
   const petContainer = document.getElementById("petContainer");
   petContainer.innerHTML = "";
@@ -110,6 +120,10 @@ const categoryBtnStyle = (category) => {
 };
 
 const loadCategoryPets = async (category) => {
+  document.getElementById("loader").classList.remove("hidden");
+  document.getElementById("section-content").classList.add("hidden");
+  document.getElementById("section-content").classList.remove("grid");
+
   const url = `https://openapi.programming-hero.com/api/peddy/category/${category}`;
   const res = await fetch(url);
   const data = await res.json();
@@ -118,6 +132,9 @@ const loadCategoryPets = async (category) => {
 };
 
 const loadSortPets = () => {
+  document
+    .getElementById("section-content")
+    .addEventListener("load", hideLoaderShowContent());
   const petContainer = document.getElementById("petContainer");
   let pet = Array.from(petContainer.children);
   if (pet.length == 0) return;
@@ -139,6 +156,9 @@ const loadSortPets = () => {
 };
 
 const sortByPrice = () => {
+  document.getElementById("loader").classList.remove("hidden");
+  document.getElementById("section-content").classList.add("hidden");
+  document.getElementById("section-content").classList.remove("grid");
   isAscending = !isAscending;
   loadSortPets();
 };
@@ -265,10 +285,10 @@ const displayAdoptDetails = (id) => {
       clearInterval(interval);
     }
   }, 1000);
-  document.getElementById(`adopt-${id}`).classList.add("btn-disabled");
+  document.getElementById(`adopt-${id}`).setAttribute("disabled", true);
   document.getElementById(`adopt-${id}`).classList.add("text-opacity-40");
-  document.getElementById(`adopt-${id}`).classList.add("cursor-not-allowed");
-  document.getElementById(`adopt-${id}`).disabled.innerText = "Adopted";
+  document.getElementById(`adopt-${id}`).classList.add("bg-gray-300");
+  document.getElementById(`adopt-${id}`).innerText = "Adopted";
 };
 
 loadPets();

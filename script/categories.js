@@ -14,7 +14,7 @@ const displayCategories = (categories) => {
     let category = `${item.category}`;
     category = category.toLowerCase();
     const content = `
-                <button onclick="loadCategoryPets('${category}')" id="category-${category}" class="category-btn flex items-center gap-2 border-[1px] border-gray-300 rounded-lg px-10 py-4">
+                <button onclick="loadCategoryPets('${category}'); hideLoaderShowContent();" id="category-${category}" class="category-btn flex items-center gap-2 border-[1px] border-gray-300 rounded-lg px-10 py-4">
                     <img src="${item.category_icon}" alt="" class="w-10 h-10">
                     <h1 class="font-bold text-2xl">${item.category}</h1>
                 </button>

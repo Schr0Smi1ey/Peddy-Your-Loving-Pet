@@ -65,14 +65,16 @@
             </div>
           </div>
           <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1 font-medium text-lg">
-              <li><a>Home</a></li>
-              <li><a>Shop</a></li>
-              <li><a>Contact</a></li>
+            <ul class="menu menu-horizontal px-1 font-semibold text-lg">
+              <li class="hover:bg-btnPrimary hover:rounded-lg"><a>Home</a></li>
+              <li class="hover:bg-btnPrimary hover:rounded-lg"><a>Shop</a></li>
+              <li class="hover:bg-btnPrimary hover:rounded-lg">
+                <a>Contact</a>
+              </li>
             </ul>
           </div>
           <div class="navbar-end">
-            <button class="btn btn-circle bg-white">
+            <button class="btn hover:bg-btnPrimary btn-circle bg-white">
               <img src="images/profile.png" alt="" class="w-10 h-10 p-1" />
             </button>
             <div class="dropdown">
@@ -126,9 +128,13 @@
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a.
           </p>
-          <button class="bg-btnPrimary p-3 rounded-lg text-white font-semibold">
-            View More
-          </button>
+          <a href="#adoptBestFriend">
+            <button
+              class="bg-btnPrimary p-3 rounded-lg text-white font-semibold"
+            >
+              View More
+            </button>
+          </a>
         </div>
 
         <div
@@ -141,6 +147,7 @@
     <main>
       <!-- Bestfriend Adopt -->
       <section
+        id="adoptBestFriend"
         class="border-2 border-green-600 md:container mx-auto my-5 lg:my-10 text-center"
       >
         <h1 class="font-[900] text-4xl mb-4">Adopt Your Best Friend</h1>
@@ -171,9 +178,19 @@
       </section>
 
       <!-- All Pet -->
-      <section class="md:container mx-auto my-5 lg:my-10">
+      <section
+        id="allPets"
+        onload="hideLoaderShowContent()"
+        class="md:container mx-auto my-5 lg:my-10"
+      >
+        <div id="loader">
+          <span
+            class="loading loading-bars loading-lg mx-auto my-auto text-btnPrimary flex justify-center items-center"
+          ></span>
+        </div>
         <div
-          class="grid grid-cols-1 md:grid-cols-3 border-2 border-green-600 gap-3 p-3"
+          id="section-content"
+          class="hidden grid-cols-1 md:grid-cols-3 border-2 border-green-600 gap-3 p-3"
         >
           <div id="petContainer" class="col-span-2 grid-cols-3 gap-3"></div>
           <div
