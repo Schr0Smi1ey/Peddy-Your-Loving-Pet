@@ -16,7 +16,6 @@
 - **Template Literals**: Utilized to create dynamic HTML content for pet listings.
 - **Let/Const**: Ensured proper variable scoping and immutability where applicable.
 - **Fetch API**: Used for making asynchronous requests to the backend API.
-- **Destructuring**: Simplified access to object properties, making the code cleaner and more readable.
 
 ## Live Demo
 
