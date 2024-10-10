@@ -32,8 +32,7 @@ const displayPets = (pets) => {
       </div>
       <h1 class="text-center font-bold text-3xl mb-3">No Information Available</h1>
       <p class="text-center text-base text-[#131313B3]">
-        It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
-        its layout. The point of using Lorem Ipsum is that it has a.
+        We currently don't have any pets listed in this category. Please check back later or explore other categories to find your perfect companion.
       </p>
     `;
     petContainer.appendChild(noPet);
