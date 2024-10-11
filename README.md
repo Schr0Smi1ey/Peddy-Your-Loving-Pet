@@ -7,7 +7,8 @@
 1. **Pet Categories**: Users can browse pets by categories such as Dogs, Cats, Rabbits, and Birds and information loads dynamically through API.
 2. **API Integration**: The pet data is dynamically loaded from an API, ensuring up-to-date listings.
 3. **Sort by Price**: Users can sort the pet listings by price both ascending and descending to find options within their budget.
-4. **Pet Details Popup**: Clicking on a pet displays a popup with detailed information, including its age, breed, and more.
+4. **Pet Details Popup**: Clicking on a pet details button displays a popup with detailed information, including its age, breed, and more.
+5. **Pet Adoption Popup**: Clicking on a pet Adoption button displays a popup with countdown of 3, and the button got disabled with text adopted.
 5. **Responsive Design**: The platform is fully responsive and works seamlessly across different device sizes.
 
 ## ES6 Features Used

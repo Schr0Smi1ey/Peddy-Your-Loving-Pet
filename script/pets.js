@@ -101,10 +101,10 @@ const displayPets = (pets) => {
             </button>
             <button id="adopt-${pet.petId}" onclick="displayAdoptDetails(${
       pet.petId
-    })" class="px-3 py-1 rounded-lg text-btnPrimary font-bold border-[1px] border-gray-300">Adopt</button>
+    })" class="px-3 py-1 rounded-lg text-btnPrimary font-bold border-[1px] border-gray-300 hover:bg-[#0E7A81] hover:text-white">Adopt</button>
             <button id="details-${pet.petId}" onclick="loadDetails(${
       pet.petId
-    })" class="px-3 py-1 rounded-lg text-btnPrimary font-bold border-[1px] border-gray-300">Details</button>
+    })" class="px-3 py-1 rounded-lg text-btnPrimary font-bold border-[1px] border-gray-300 hover:bg-[#0E7A81] hover:text-white">Details</button>
           </div>
         </div>
       </div>
