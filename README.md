@@ -20,4 +20,4 @@
 
 ## Live Demo
 
-Check out the live project here: [https://peddy-your-loving-pet.netlify.app/](#)
+Check out the live project here: [Peddy Live Demo](https://peddy-your-loving-pet.netlify.app/)
