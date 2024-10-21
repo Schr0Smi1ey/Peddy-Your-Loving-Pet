@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.cdnfonts.com/css/miama" rel="stylesheet" />
+
+    <!-- DaisyUI + TailWind CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              btnPrimary: "#0E7A81",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              lato: ["Lato", "sans-serif"],
+              miama: ["Miama", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Fontawesome library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-lato">
+    <div id="loader-body">
+      <span
+        class="min-h-screen loading loading-bars loading-lg mx-auto my-auto text-btnPrimary flex justify-center items-center"
+      ></span>
+    </div>
+    <header id="header" class="hidden">
+      <!-- Navbar -->
+      <nav class="md:container mx-auto p-3 mb-5 lg:mb-10">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <button class="flex items-center gap-3">
+              <img src="images/logo.webp" alt="" />
+              <h1 class="font-[900] text-3xl">Peddy</h1>
+            </button>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 font-semibold text-lg">
+              <li class="hover:bg-btnPrimary hover:rounded-lg"><a>Home</a></li>
+              <li class="hover:bg-btnPrimary hover:rounded-lg"><a>Shop</a></li>
+              <li class="hover:bg-btnPrimary hover:rounded-lg">
+                <a>Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <button class="btn hover:bg-btnPrimary btn-circle bg-white">
+              <img src="images/profile.png" alt="" class="w-10 h-10 p-1" />
+            </button>
+            <div class="dropdown dropdown-left">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10 hover:bg-btnPrimary p-1 rounded-full"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-14 w-fit p-2 shadow"
+              >
+                <li
+                  class="font-semibold text-lg hover:bg-btnPrimary rounded-lg"
+                >
+                  <a>Home</a>
+                </li>
+                <li
+                  class="font-semibold text-lg hover:bg-btnPrimary rounded-lg"
+                >
+                  <a>Shop</a>
+                </li>
+                <li
+                  class="font-semibold text-lg hover:bg-btnPrimary rounded-lg"
+                >
+                  <a>Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Banner -->
+      <section class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10">
+        <div
+          class="mx-auto lg:w-3/4 2xl:w-1/2 flex flex-col justify-center items-center text-center mb-7"
+        >
+          <p
+            class="flex gap-3 items-center font-bold text-[#13131399] text-2xl mb-5"
+          >
+            Bringing Families Together
+            <img src="images/fire.png" alt="" class="w-5 h-5" />
+          </p>
+          <h1 class="font-[900] text-5xl md:text-7xl mb-5">
+            Your Path to Adoption<br />Starts Here
+          </h1>
+          <p class="font-normal text-base mb-5">
+            Every pet deserves a loving home. Whether you're looking for a loyal
+            companion or a playful friend, your path to adoption starts here.
+            Join us in giving these animals a second chance at life.
+          </p>
+          <a href="#adoptBestFriend">
+            <button
+              class="bg-btnPrimary p-3 rounded-lg text-white font-semibold"
+            >
+              View More
+            </button>
+          </a>
+        </div>
+
+        <div
+          class="lg:w-3/4 2xl:w-1/2 mx-auto flex justify-center items-center"
+        >
+          <img src="images/pet.webp" alt="" />
+        </div>
+      </section>
+    </header>
+
+    <main id="main" class="hidden">
+      <!-- Bestfriend Adopt -->
+      <section
+        id="adoptBestFriend"
+        class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10 text-center"
+      >
+        <h1 class="font-[900] text-3xl md:text-4xl mb-4">
+          Adopt Your Best Friend
+        </h1>
+        <p
+          class="font-normal text-base text-[#131313B3] lg:w-2/3 2xl:w-1/2 mx-auto"
+        >
+          Thousands of pets are waiting for someone like you. Open your heart
+          and home to an animal in need, and experience the joy that adoption
+          brings.
+        </p>
+      </section>
+
+      <!-- Show Categories -->
+      <section
+        id="categoryContainer"
+        class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10 flex justify-between flex-wrap gap-4 items-center"
+      ></section>
+
+      <!-- Best deal and sorting -->
+      <section
+        class="md:container mx-auto px-5 py-2 md:p-5 my-5 lg:my-10 flex justify-between items-center"
+      >
+        <h1 class="font-[900] text-xl md:text-2xl">Best Deal For you</h1>
+        <button
+          onclick="sortByPrice()"
+          class="font-bold bg-btnPrimary px-[6px] py-1 md:p-3 text-white rounded-lg"
+        >
+          Sort by Price
+        </button>
+      </section>
+
+      <!-- All Pet -->
+      <section
+        id="allPets"
+        onload="hideLoaderShowContent()"
+        class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10"
+      >
+        <div id="loader">
+          <span
+            class="loading loading-bars loading-lg mx-auto my-auto text-btnPrimary flex justify-center items-center"
+          ></span>
+        </div>
+        <div
+          id="section-content"
+          class="hidden grid-cols-1 md:grid-cols-3 gap-3 p-2"
+        >
+          <div
+            id="petContainer"
+            class="md:col-span-2 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3 md:p-1"
+          ></div>
+          <div class="p-1">
+            <h1 class="font-[900] text-2xl mb-2 md:hidden">
+              Your Loved <span class="text-btnPrimary">Pets</span>
+            </h1>
+            <div
+              id="loved-pet"
+              class="p-2 border-2 border-gray-300 grid grid-cols-2 auto-rows-auto rounded-lg gap-2"
+            >
+              <h1
+                id="noLikedPet"
+                class="col-span-2 font-bold text-xl md:text-3xl text-gray-400"
+              >
+                You haven't added any pet to your favorites yet
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modals -->
+        <button class="btn hidden" onclick="adopt.showModal()">
+          open modal
+        </button>
+        <dialog id="adopt" class="modal">
+          <div class="modal-box">
+            <div id="adoptDetails" class="mb-3"></div>
+            <form method="dialog">
+              <button
+                id="cancelButton"
+                class="btn hidden w-full bg-[#0E7A811A] text-[#0E7A81] font-bold"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </dialog>
+
+        <button class="btn hidden" onclick="details.showModal()">
+          open modal
+        </button>
+        <dialog id="details" class="modal">
+          <div class="modal-box">
+            <div id="detailContainer" class="mb-3"></div>
+            <form method="dialog">
+              <button
+                class="btn w-full bg-[#0E7A811A] text-[#0E7A81] font-bold text-xl"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </dialog>
+      </section>
+    </main>
+
+    <footer id="footer" class="bg-black p-5 hidden">
+      <section class="md:container mx-auto p-3 md:p-5 my-5 lg:my-10">
+        <div class="grid grid-cols-1 md:grid-cols-3">
+          <div class="text-center md:text-left mb-5 md:mb-0">
+            <button class="mb-6">
+              <a href="#header" class="flex gap-3 items-center">
+                <img src="images/logo.webp" alt="Peddy Logo" />
+                <h1 class="font-[900] text-[#FFFFFFE6] text-4xl">Peddy</h1>
+              </a>
+            </button>
+            <div class="font-normal text-base space-y-2">
+              <p>Location: av. Washington 165, NY CA 54003</p>
+              <p>Phone: +31 85 964 47 25</p>
+              <p>Email: info@yourdomain.com</p>
+              <p>Openings hours: 9.00 AM - 5.00 PM</p>
+            </div>
+            <div
+              class="flex items-center md:items-start justify-center md:justify-start gap-4 mt-5"
+            >
+              <!-- Social Media Icons -->
+              <img
+                src="images/facebook.png"
+                alt="facebook"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
+              <img
+                src="images/twitter.png"
+                alt="twitter"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
+              <img
+                src="images/youtube.png"
+                alt="youtube"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
+              <img
+                src="images/instagram.png"
+                alt="instagram"
+                class="w-10 h-10 hover:bg-btnPrimary p-1 rounded-lg"
+              />
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center mb-5">
+            <div class="mx-auto">
+              <h1 class="font-bold text-lg text-[#FFFFFFE6] mb-6">
+                Useful Links
+              </h1>
+              <ul class="font-normal text-base text-[#FFFFFF99] space-y-3">
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Home</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>About Us</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Animals</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Foundation</a>
+                </li>
+                <li
+                  class="hover:bg-btnPrimary p-1 rounded-lg w-fit mx-auto md:ml-0"
+                >
+                  <a>Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center md:items-start">
+            <div>
+              <h1
+                class="text-center md:text-left font-bold text-lg text-[#FFFFFFE6] mb-4"
+              >
+                Drop a Message
+              </h1>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="p-2 text-[#FFFFFF99] bg-[#FFFFFF0D] rounded-lg mb-3 w-full"
+                />
+                <button
+                  class="bg-btnPrimary text-[#FFFFFF99] md:text-white font-bold text-lg w-full rounded-lg px-3 py-2"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <h1 class="text-center mt-2">
+          All rights reserved by
+          <a
+            href="https://www.linkedin.com/in/sarafat-karim/"
+            target="_blank"
+            class="font-bold font-miama text-2xl btn-effect p-2"
+          >
+            Sarafat Karim
+          </a>
+        </h1>
+      </section>
+    </footer>
+
+    <!-- Script -->
+    <script src="script/categories.js"></script>
+    <script src="script/pets.js"></script>
+  </body>
+</html>
