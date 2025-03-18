@@ -17,7 +17,11 @@ const displayCategories = (categories) => {
       <button 
         onclick="loadCategoryPets('${category}'); hideLoaderShowContent();" 
         id="category-${category}" 
+<<<<<<< HEAD
         class="category-btn hover:bg-btnPrimary/90 hover:text-white flex items-center gap-2 border-[1px] border-gray-300 rounded-lg px-5 py-2 md:px-10 md:py-4"
+=======
+        class="category-btn flex items-center gap-2 border-[1px] border-gray-300 rounded-lg px-5 py-2 md:px-10 md:py-4"
+>>>>>>> b6aa0c69a3b74932dd2571e239daf201c56c6809
       >
         <img src="${item.category_icon}" alt="" class="w-10 h-10">
         <h1 class="font-bold text-2xl">${item.category}</h1>
