@@ -1,6 +1,6 @@
 # ![Peddy Logo](/images/logo.webp) Peddy-Your-Loving-Pet
 
-**Peddy-Your-Loving-Pet** is a pet adoption platform that helps users find their ideal pets by browsing through various categories and filtering them based on preferences. The website offers a smooth and intuitive interface, allowing users to explore different pets, get detailed information, and adopt their future companions. All the pet information is fetched dynamically from an API.
+**Peddy-Your-Loving-Pet** is a pet adoption platform home page that helps users find their ideal pets by browsing through various categories and filtering them based on preferences. The website offers a smooth and intuitive interface, allowing users to explore different pets, get detailed information, and adopt their future companions. All the pet information is fetched dynamically from an API.
 
 ## Key Features
 
