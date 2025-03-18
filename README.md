@@ -1,4 +1,4 @@
-# Peddy-Your-Loving-Pet
+# ![Peddy Logo](/images/logo.webp) Peddy-Your-Loving-Pet
 
 **Peddy-Your-Loving-Pet** is a pet adoption platform that helps users find their ideal pets by browsing through various categories and filtering them based on preferences. The website offers a smooth and intuitive interface, allowing users to explore different pets, get detailed information, and adopt their future companions. All the pet information is fetched dynamically from an API.
 
@@ -17,7 +17,7 @@
 - **Template Literals**: Utilized to create dynamic HTML content for pet listings.
 - **Let/Const**: Ensured proper variable scoping and immutability where applicable.
 - **Fetch API**: Used for making asynchronous requests to the backend API.
-- # **forEach**: Used for loop through the array.
+- **forEach**: Used for loop through the array.
 
 ## Live Demo
 
